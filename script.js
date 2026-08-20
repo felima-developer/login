@@ -16,9 +16,7 @@ formulario.addEventListener("submit", function(event) {
         .value;
 
 
-    // =========================
-    // VALIDAÇÃO DO USUÁRIO
-    // =========================
+//Aqui estamos validando o usuario, dizendo que ele nao pode estar vazio, caso esteja vazio ele apresenta a informacao de erro
 
     if (usuario === "") {
 
@@ -28,11 +26,11 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // =========================
-    // VALIDAÇÃO DA SENHA
-    // =========================
+    
+    // Aqui vamos validar a senha de acordo com as regras estabelecidas
+   
 
-    // Verifica se a senha está vazia
+    // usamos o se, para verificar se a senha esta vazia, caso esteja apresenta o erro
     if (senha === null || senha.trim() === "") {
 
         mostrarErro("A senha não pode ficar vazia.");
@@ -41,7 +39,7 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // Verifica se existem espaços
+    // usamos esse se, para certificarmos que a senha nao possui espacos
     if (/\s/.test(senha)) {
 
         mostrarErro("A senha não pode conter espaços.");
@@ -50,7 +48,7 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // Verifica quantidade de caracteres
+    // aqui verificamos se a senha contem no minimo 6 caracteres
     if (senha.length < 6) {
 
         mostrarErro(
@@ -61,7 +59,7 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // Verifica se possui letra
+    // aqui verificamos se a senha possui letra
     if (!/[A-Za-z]/.test(senha)) {
 
         mostrarErro(
@@ -72,7 +70,7 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // Verifica se possui número
+    // aqui verificamos se a senha possui numeros
     if (!/[0-9]/.test(senha)) {
 
         mostrarErro(
@@ -83,7 +81,7 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // Verifica se possui caractere especial
+    // aqui verifica se existe caracter especial
     if (!/[^A-Za-z0-9]/.test(senha)) {
 
         mostrarErro(
@@ -94,9 +92,9 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // =========================
-    // LOGIN
-    // =========================
+    
+    // LOGIN NO SISTEMA - predefinimos uma senha correta, para teste de validacao como status de Sucesso
+  
 
     const usuarioCorreto = "admin";
 
@@ -116,7 +114,7 @@ formulario.addEventListener("submit", function(event) {
     }
 
 
-    // Login aprovado
+    // mensagem para Login aprovado
     mensagem.textContent =
         "Login realizado com sucesso!";
 
